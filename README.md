@@ -1,6 +1,6 @@
 # astro-meteo
 
-<img width="1302" alt="image" src="[https://github.com/eugeneshul/astro-meteo/src/assets/Screenshot-main-page.png](https://github.com/eugeneshul/astro-meteo/blob/main/src/assets/Screenshot-main-page.png)">
+<img width="1302" alt="image" src="https://github.com/eugeneshul/astro-meteo/blob/main/src/assets/Screenshot-main-page.png">
 
 Pet-project developed on Astro, allowing you to track the weather in any city via search. Works via openweathermap API.
 
