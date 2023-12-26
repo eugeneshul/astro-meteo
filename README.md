@@ -7,6 +7,7 @@ Pet-project developed on Astro, allowing you to track the weather in any city vi
 # Actions to start
 
 for start project need Node.js - v18.14.1 or higher
+
 npm install - install packages  
 npm run dev - run project on development mode  
 npm run build - run build for production
