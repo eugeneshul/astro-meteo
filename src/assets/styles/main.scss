@@ -1,0 +1,486 @@
+$primary-color: #22609c;
+$secondary-color: #eef9ff;
+$gold: #ffd347;
+
+html,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $secondary-color;
+}
+
+a {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 0;
+  background-color: $primary-color;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+.laptop {
+  width: 100%;
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 25px;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.section-left {
+  width: 30%;
+  padding-right: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding-right: 0;
+  }
+  &.section-error {
+    min-width: 235px;
+    width: auto;
+    padding-right: 0;
+  }
+  .info {
+    height: 100%;
+    padding: 16px;
+    background-color: $primary-color;
+    border-radius: 25px;
+  }
+  .city-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 25px;
+      height: 25px;
+      background: url("/src/assets/img/search.svg") no-repeat 50% 50%;
+      background-size: contain;
+      transform: translateY(50%);
+      cursor: pointer;
+    }
+
+    .search {
+      width: 100%;
+      padding: 16px;
+      font-family: "Inter", Arial, sans-serif;
+      color: $primary-color;
+      background-color: $secondary-color;
+      border-radius: 16px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .pic-main {
+    width: 130px;
+    height: 130px;
+    margin: 20px 0 12px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+  }
+
+  .text-block {
+    position: relative;
+    padding-left: 24px;
+    padding-bottom: 8px;
+    font-size: 14px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  .weather {
+    margin: 0 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba($secondary-color, 0.4);
+
+    .temp {
+      padding-bottom: 8px;
+      font-size: 32px;
+    }
+
+    &-desc::before {
+      background-image: url("/src/assets/img/weather.svg");
+    }
+  }
+
+  .city::before {
+    background-image: url("/src/assets/img/location.svg");
+  }
+
+  .date::before {
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    background-image: url("/src/assets/img/calendar.svg");
+  }
+
+  .error {
+    padding-top: 20px;
+
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    &-message {
+      padding-top: 10px;
+      font-size: 13px;
+    }
+  }
+}
+
+.section-right {
+  width: 70%;
+  padding-left: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-top: 16px;
+    padding-left: 0;
+  }
+
+  .highlights {
+    padding: 28px 16px 16px;
+    background-color: $secondary-color;
+    border-radius: 25px;
+    border: 2px solid $primary-color;
+
+    .title {
+      padding-bottom: 16px;
+      color: $primary-color;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 575px) {
+        flex-direction: column;
+      }
+
+      .highlight {
+        width: 32%;
+
+        @media (max-width: 575px) {
+          width: 100%;
+          margin-bottom: 16px;
+        }
+
+        .card {
+          min-height: 230px;
+          padding: 16px;
+          background: $primary-color;
+          border-radius: 8px;
+
+          @media (max-width: 1199px) {
+            padding: 12px;
+          }
+          &-centered {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+          }
+
+          &-justify {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          }
+          &-title {
+            padding-bottom: 12px;
+            font-size: 13px;
+
+            @media (max-width: 1199px) {
+              font-size: 12px;
+            }
+          }
+
+          &-pic {
+            width: 100%;
+            height: 90px;
+            margin-bottom: 16px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+
+            &--wind {
+              background-image: url("/src/assets/img/equalizer (2).png");
+            }
+            &--pressure {
+              background-image: url("/src/assets/img/barometer.png");
+            }
+            &--sun {
+              background-image: url("/src/assets/img/sun-moving.png");
+            }
+          }
+
+          .info-main {
+            display: flex;
+            align-items: flex-end;
+
+            &:last-child {
+              text-align: right;
+            }
+            &-num {
+              font-size: 20px;
+
+              @media (max-width: 1199px) {
+                font-size: 18px;
+              }
+            }
+            &-text {
+              padding-left: 2px;
+              padding-bottom: 3px;
+              font-size: 13px;
+              color: rgba($secondary-color, 0.75);
+
+              @media (max-width: 1199px) {
+                padding-bottom: 1.5px;
+                font-size: 12px;
+              }
+            }
+          }
+
+          .states {
+            display: flex;
+            justify-content: space-between;
+
+            &--margin {
+              margin-top: 40px;
+            }
+
+            .state {
+              width: 40%;
+
+              &:last-child {
+                text-align: right;
+              }
+
+              &-pic {
+                width: 20px;
+                height: 20px;
+                margin-bottom: 6px;
+                background: url("/src/assets/img/sun.svg") no-repeat 50% 50%;
+                background-size: cover;
+
+                &--flipped {
+                  margin-left: auto;
+                  -webkit-transform: scaleX(-1);
+                  transform: scaleX(-1);
+                }
+              }
+              &-title {
+                font-size: 12px;
+                color: $gold;
+              }
+              &-time {
+                font-size: 13px;
+                font-weight: 700;
+
+                @media (max-width: 1199px) {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+
+          &-small {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: $primary-color;
+            border-radius: 8px;
+
+            &-title {
+              font-size: 13px;
+            }
+
+            &-info {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              @media (max-width: 1199px) {
+                flex-direction: column;
+                align-items: flex-start;
+              }
+
+              .text-learn-more {
+                margin: 0 5px;
+              }
+            }
+            &-pic {
+              width: 20px;
+              height: 20px;
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+              background-size: contain;
+
+              @media (max-width: 1199px) {
+                display: none;
+              }
+              &--margin {
+                width: 16px;
+                height: 16px;
+                margin-bottom: 3px;
+              }
+              &--wind {
+                background-image: url("/src/assets/img/gusts.svg");
+              }
+              &--pressure {
+                background-image: url("/src/assets/img/humidity.svg");
+              }
+              &--sun {
+                background-image: url("/src/assets/img/cloud.svg");
+              }
+            }
+            &-data {
+              display: flex;
+              align-items: flex-end;
+              width: 45%;
+
+              @media (max-width: 1199px) {
+                width: 100%;
+                padding-top: 8px;
+              }
+            }
+            &-hint {
+              width: 55%;
+
+              @media (max-width: 1199px) {
+                width: 100%;
+              }
+            }
+            &-text {
+              font-size: 11px;
+              line-height: 1.2;
+              color: rgba($secondary-color, 0.6);
+
+              @media (max-width: 1199px) {
+                min-height: 22px;
+                font-size: 9px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-bottom {
+  width: 49%;
+  margin-top: 16px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  .block-bottom {
+    height: 100%;
+    padding: 28px 16px;
+    background: $primary-color;
+    border-radius: 25px;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 575px) {
+        flex-direction: column;
+      }
+
+      .pic-humidity {
+        background-image: url("/src/assets/img/humidity.png");
+      }
+
+      .pic-coords {
+        background-image: url("/src/assets/img/compass.png");
+      }
+    }
+
+    &-pic {
+      width: 15%;
+      height: 70px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border-radius: 16px;
+
+      @media (max-width: 575px) {
+        width: 30%;
+        margin-right: 0;
+      }
+    }
+
+    &-texts {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 20px;
+
+      @media (max-width: 575px) {
+        width: 100%;
+        padding-top: 16px;
+        padding-left: 0;
+      }
+    }
+
+    &-text-block {
+      &-title {
+        padding-bottom: 4px;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      &-desc {
+        font-size: 13px;
+        color: rgba($secondary-color, 0.75);
+      }
+    }
+  }
+}

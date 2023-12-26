@@ -1,0 +1,25 @@
+---
+import { API_KEY, BASE_URL } from "../constants";
+import Layout from "../layouts/Layout.astro";
+import Main from "../components/Main.jsx";
+
+const initialWeather = await fetch(
+  `${BASE_URL}?q=Paris&units=metric&appid=${API_KEY}`
+).then((response) => response.json());
+---
+
+<Layout title="Astro Meteo">
+  <div class="page">
+    <main class="main">
+      <div class="container">
+        <div class="laptop">
+          <Main client:load initialWeather={initialWeather} />
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style lang="scss" is:global>
+  @import "../assets/styles/main.scss";
+</style>
